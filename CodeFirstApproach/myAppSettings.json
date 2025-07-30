@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DevDB": "Server=localhost,1434;Database=vention-ef-tut;User Id=sa;Password=bazaTestowa1234;Encrypt=False;TrustServerCertificate=True"
+  }
+}
