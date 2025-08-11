@@ -17,6 +17,10 @@ public class RoleEfConfig : IEntityTypeConfiguration<Role>
             .IsRequired();
 
         builder
+            .Property(r => r.Description)
+            .IsRequired(false);
+        
+        builder
             .ToTable("Role");
     }
 }

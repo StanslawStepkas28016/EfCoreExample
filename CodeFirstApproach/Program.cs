@@ -1,17 +1,29 @@
 ﻿using EfCoreTut;
 using EfCoreTut.Entities;
+using EfCoreTut.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 internal sealed class Program
 {
     public static async Task Main(string[] args)
     {
-        MyContext context = new MyContext();
+        var serviceCollection = new ServiceCollection();
+        var configurationManager = new ConfigurationManager();
+        configurationManager.GetRequiredSection("");
+
+        serviceCollection.AddSingleton<IMyAppService, MyAppService>();
+        serviceCollection.AddDbContext<MyContext>();
+        // serviceCollection.AddSingleton<IMyAppService, MyAppService>();
+
+        await using var buildServiceProvider = serviceCollection.BuildServiceProvider();
+
 
         // await OneToMany(myContext);
         // await ManyToMany(context);
-        await TransactionExample(context);
+        // await TransactionExample(context);
     }
 
     private static async Task TransactionExample(MyContext context)

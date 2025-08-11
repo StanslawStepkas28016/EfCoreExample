@@ -22,6 +22,7 @@ public class UserEfConfig : IEntityTypeConfiguration<User>
             .HasForeignKey(u => u.IdRole)
             .OnDelete(DeleteBehavior.Restrict);
 
+
         builder
             .ToTable("User");
     }

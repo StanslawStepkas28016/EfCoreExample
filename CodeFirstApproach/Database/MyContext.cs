@@ -15,6 +15,8 @@ public class MyContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(MyContext).Assembly);
+
+
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
