@@ -1,4 +1,4 @@
-## EfCoreTut
-- Solution which presents two approaches using Entity Framework Core for an internship at Vention.
+## EfCoreExample
+- Solution presents two approaches of using Entity Framework Core:
   - Code First
   - Database First
